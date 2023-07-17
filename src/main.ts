@@ -1,7 +1,7 @@
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 
-export interface IExtensions {
+interface IExtensions {
   ext: string;
   ext_replace_to: string;
   ext_replace_from: string;
@@ -10,7 +10,7 @@ export interface IExtensions {
 export const ext_changer = async (
   project_path: string,
   ext_replace_from: string,
-  ext_replace_to: string
+  ext_replace_to: string,
 ) => {
   const current_files = await fs.readdir(project_path);
 
@@ -43,7 +43,7 @@ export const ext_changer = async (
 const update_file = async (
   base_path: string,
   f: string,
-  { ext, ext_replace_to, ext_replace_from }: IExtensions
+  { ext, ext_replace_to, ext_replace_from }: IExtensions,
 ) => {
   const old_path = path.resolve(base_path, f);
 
@@ -53,7 +53,7 @@ const update_file = async (
 
   const new_file_path = path.resolve(
     base_path,
-    base_name + ext.replace(ext_replace_from, ext_replace_to)
+    base_name + ext.replace(ext_replace_from, ext_replace_to),
   );
 
   await fs.writeFile(new_file_path, file);
