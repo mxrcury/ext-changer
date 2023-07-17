@@ -1,0 +1,26 @@
+{
+  "name": "ext-changer",
+  "version": "0.0.0",
+  "description": "Library for changing extensions",
+  "type": "module",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@types/node": "~18.16.19",
+    "@typescript-eslint/eslint-plugin": "~5.59",
+    "@typescript-eslint/parser": "~5.59",
+    "eslint": "~8.38",
+    "eslint-config-prettier": "~8.8",
+    "eslint-plugin-jest": "~27.2",
+    "prettier": "~2.8",
+    "tsup": "^7.1.0",
+    "typescript": "~5.0"
+  },
+  "scripts": {
+    "build": "tsup src/main.ts --format cjs,esm --dts",
+    "lint": "tsc"
+  },
+  "author": "Demetr Honchar <demetrgonchar@gmail.com>",
+  "license": "Apache-2.0"
+}
