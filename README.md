@@ -4,3 +4,10 @@
 #### This package was created to simpler task with renaming a lot of files to other extension in some big project
 
 NPM - https://www.npmjs.com/package/ext-changer
+
+#### Using example:
+```javascript
+import { ext_changer } from "ext-changer";
+
+ext_changer("./controllers", ".js", ".ts");
+```
